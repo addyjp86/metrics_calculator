@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Model Metrics Dashboard</title>
+</head>
+<body>
+
+    <h1>AI Model Metrics Dashboard</h1>
+
+    <form action="/calculate" method="POST">
+
+        <p>Actual Values:</p>
+        <textarea name="actual" rows="4" cols="40"></textarea>
+
+        <p>Predicted Values:</p>
+        <textarea name="predicted" rows="4" cols="40"></textarea>
+
+        <br><br>
+
+        <button type="submit">
+            Calculate Metrics
+        </button>
+
+    </form>
+
+    {% if mae is defined %}
+
+        <h2>Results</h2>
+
+        <p>MAE: {{ mae }}</p>
+        <p>MSE: {{ mse }}</p>
+        <p>RMSE: {{ rmse }}</p>
+        <p>R² Score: {{ r2 }}</p>
+
+    {% endif %}
+
+</body>
+</html>
